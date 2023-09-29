@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: block;
+  font-family: "Epilogue", sans-serif;
+  height: 100vh;
+
+  background-color: hsl(0, 0%, 98%);
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+}
+
+.logo {
+  display: block;
+  object-fit: contain;
+  margin-right: 5rem;
+}
+
+.sidebar-bg {
+  width: 100%;
+}
+
+.menu-items {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-items ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu-items ul li {
+  position: relative;
+  margin: 0 1rem;
+  cursor: pointer;
+  color: hsl(0, 0%, 41%);
+}
+
+.menu-items ul li:hover {
+  color: black;
+}
+
+li img {
+  padding-left: 5px;
+  vertical-align: middle;
+}
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+button.register {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.hamburger {
+  z-index: 1;
+  position: absolute;
+  right: 1rem;
+  display: block;
+}
+
+.bar {
+  background-color: black;
+  width: 2.5rem;
+  height: 3px;
+  margin: 8px auto;
+  display: none;
+  transition: all 0.1s ease-in;
+}
+
+/* main section */
+
+section.main {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero {
+  padding: 1rem;
+  background: url(/images/image-hero-desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+}
+
+article p {
+  margin-right: 20%;
+  text-align: left;
+  color: hsl(0, 0%, 41%);
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+button.learn {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  margin: 1rem 0 2.5rem 0;
+}
+
+button.learn:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.brands img {
+  margin-right: 2.5rem;
+}
+
+/* dropdowns */
+
+.features-dropdown,
+.company-dropdown {
+  box-shadow: 1px 1px 10px 1px hsla(0, 0%, 8%, 0.3);
+  background-color: white;
+  color: hsl(0, 0%, 41%);
+
+  border-radius: 5px;
+  position: absolute;
+  top: 2rem;
+  display: none;
+  transition: all 0.2s;
+  padding-top: 0.5rem;
+}
+
+.features-dropdown {
+  left: -4rem;
+}
+
+.features-dropdown ul,
+.company-dropdown ul {
+  display: flex;
+  flex-direction: column;
+
+  align-items: start;
+  padding: 0.5rem;
+}
+
+.features-dropdown ul li,
+.company-dropdown ul li {
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.features-dropdown img {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.active {
+  visibility: visible;
+  display: block;
+}
+
+/* Media query for smaller screens */
+
+@media screen and (max-width: 850px) {
+  .bar {
+    display: block;
+  }
+  .hamburger.hb-active .bar:first-child {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .hamburger.hb-active .bar:last-child {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+
+  .hamburger.hb-active .bar:nth-child(2) {
+    display: none;
+  }
+
+  .sidebar-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.45s ease-in-out, opacity 0.45s ease-in-out;
+  }
+
+  .menu-items {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    flex-direction: column;
+    background-color: white;
+    justify-content: start;
+    align-items: start;
+    padding-left: 1rem;
+    z-index: 1;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .sidebar-active {
+    transform: translateX(0);
+  }
+
+  .bg-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-items .main-ul {
+    margin-top: 3.5rem;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .menu-items ul li {
+    margin: 1rem 0;
+  }
+
+  .menu-items .login {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .features-dropdown,
+  .company-dropdown {
+    left: 2rem;
+    top: 0;
+    box-shadow: none;
+    position: relative;
+  }
+
+  section.main {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: auto;
+  }
+
+  .main article {
+    grid-row: -1;
+  }
+  .hero {
+    grid-row: 1/2;
+  }
+
+  article {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  article p {
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .hero {
+    background: url(/images/image-hero-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 4rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .brands img {
+    margin: 0;
+    padding: 0.5rem;
+    height: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .menu-items .login {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

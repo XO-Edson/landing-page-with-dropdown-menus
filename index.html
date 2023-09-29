@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Intro section with dropdown navigation</title>
+  </head>
+  <body>
+    <header>
+      <img src="/images/logo.svg" alt="logo" class="logo" />
+      <div class="sidebar-bg">
+        <nav class="menu-items">
+          <div>
+            <ul class="main-ul">
+              <li class="features">
+                Features
+                <img src="/images/icon-arrow-down.svg" alt="icon-arrow-down" />
+                <div class="features-dropdown">
+                  <ul>
+                    <li>
+                      <img src="/images/icon-todo.svg" alt="todo icon" /> Todo
+                      List
+                    </li>
+                    <li>
+                      <img
+                        src="/images/icon-calendar.svg"
+                        alt="calendar icon"
+                      />
+                      Calendar
+                    </li>
+                    <li>
+                      <img
+                        src="/images/icon-reminders.svg"
+                        alt="reminders icon"
+                      />
+                      Reminders
+                    </li>
+                    <li>
+                      <img
+                        src="/images/icon-planning.svg"
+                        alt="planning icon"
+                      />
+                      planning
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="company">
+                Company
+                <img src="/images/icon-arrow-down.svg" alt="icon-arrow-down" />
+                <div class="company-dropdown">
+                  <ul>
+                    <li>History</li>
+                    <li>Our Team</li>
+                    <li>Blog</li>
+                  </ul>
+                </div>
+              </li>
+              <li>Careers</li>
+              <li>About</li>
+            </ul>
+          </div>
+
+          <div class="login">
+            <button>Login</button>
+            <button class="register">Register</button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </header>
+
+    <section class="main">
+      <article>
+        <!--  -->
+        <div>
+          <h1>
+            Make <br />
+            remote work
+          </h1>
+
+          <p>
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <button class="learn">Learn more</button>
+        </div>
+        <!--  -->
+        <div class="brands">
+          <img src="/images/client-databiz.svg" alt="client-databiz" />
+          <img src="/images/client-audiophile.svg" alt="client-audiophile" />
+          <img src="/images/client-meet.svg" alt="client-meet" />
+          <img src="/images/client-maker.svg" alt="client-maker" />
+        </div>
+      </article>
+
+      <section class="hero"></section>
+    </section>
+
+    <script src="intro-section.js"></script>
+  </body>
+</html>
